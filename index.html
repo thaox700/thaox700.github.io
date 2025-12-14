@@ -1,64 +1,1116 @@
-<section class="portfolio" id="portfolio">
-        <div class="section-title">
-            <h2>Our Work</h2>
-            <p>Quality craftsmanship on every project</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One Electrics and Engineers | Licensed Master Electrician in Minnesota</title>
+    <meta name="description" content="One Electrics and Engineers - Licensed and insured master electrician in Minnesota. Electrical engineering expertise. Call 651-202-5962 for professional electrical services.">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary-blue: #1E3A8A;
+            --accent-amber: #F59E0B;
+            --dark-slate: #0F172A;
+            --light-gray: #F8FAFC;
+            --medium-gray: #64748B;
+            --white: #FFFFFF;
+            --gradient-primary: linear-gradient(135deg, #1E3A8A 0%, #3B82F6 100%);
+        }
+        
+        body {
+            font-family: 'DM Sans', sans-serif;
+            line-height: 1.7;
+            color: var(--dark-slate);
+            background: var(--white);
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+        
+        /* Navigation */
+        nav {
+            background: linear-gradient(135deg, #1E3A8A 0%, #2563EB 100%);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid var(--accent-amber);
+        }
+        
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.25rem 0;
+            position: relative;
+        }
+        
+        nav .container::before {
+            content: '⚡';
+            position: absolute;
+            left: -1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 2rem;
+            opacity: 0.2;
+            animation: spark 2s infinite;
+        }
+        
+        nav .container::after {
+            content: '⚙️';
+            position: absolute;
+            right: -1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 2rem;
+            opacity: 0.2;
+            animation: rotate 4s linear infinite;
+        }
+        
+        .nav-decorations {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+            overflow: hidden;
+        }
+        
+        .nav-symbol {
+            position: absolute;
+            animation: float-symbol 3s ease-in-out infinite;
+        }
+        
+        @keyframes float-symbol {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        @keyframes spark {
+            0%, 100% { opacity: 0.2; }
+            50% { opacity: 0.4; }
+        }
+        
+        @keyframes rotate {
+            from { transform: translateY(-50%) rotate(0deg); }
+            to { transform: translateY(-50%) rotate(360deg); }
+        }
+        
+        .logo {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--white);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            letter-spacing: -0.02em;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .logo-icon {
+            width: 36px;
+            height: 36px;
+            background: var(--accent-amber);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-blue);
+            font-size: 1.2rem;
+            box-shadow: 0 2px 8px rgba(245, 158, 11, 0.3);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent-amber);
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-amber);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .call-button {
+            background: var(--accent-amber);
+            color: var(--primary-blue);
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(245, 158, 11, 0.5);
+        }
+        
+        .call-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(245, 158, 11, 0.7);
+            background: #FBBF24;
+        }
+        
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--white);
+        }
+        
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 6rem 0 5rem;
+            background: var(--light-gray);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(30, 58, 138, 0.05) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        
+        .hero .container {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            color: var(--dark-slate);
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .hero-highlight {
+            color: var(--primary-blue);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--medium-gray);
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeInUp 0.8s ease-out 0.2s backwards;
+        }
+        
+        .hero-ctas {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 0.8s ease-out 0.4s backwards;
+        }
+        
+        .cta-primary {
+            background: var(--gradient-primary);
+            color: var(--white);
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.05rem;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .cta-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(30, 58, 138, 0.3);
+        }
+        
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 4rem;
+            flex-wrap: wrap;
+            animation: fadeInUp 0.8s ease-out 0.6s backwards;
+        }
+        
+        .badge {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .badge-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+        
+        .badge-text {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--dark-slate);
+            text-align: center;
+        }
+        
+        /* Section Styles */
+        .section {
+            padding: 5rem 0;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+        
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--dark-slate);
+            margin-bottom: 1rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+        
+        .section-header p {
+            font-size: 1.1rem;
+            color: var(--medium-gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        
+        .service-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid rgba(0,0,0,0.06);
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+            border-color: var(--primary-blue);
+        }
+        
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.25rem;
+            display: block;
+        }
+        
+        .service-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.75rem;
+            color: var(--dark-slate);
+        }
+        
+        .service-card p {
+            color: var(--medium-gray);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+        
+        /* About Section */
+        .about-section {
+            background: var(--light-gray);
+        }
+        
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .about-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark-slate);
+        }
+        
+        .about-content p {
+            font-size: 1.1rem;
+            color: var(--medium-gray);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+        
+        .credentials {
+            display: inline-flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+        
+        .credential-badge {
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 0.6rem 1.25rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .owner-info {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            margin-top: 3rem;
+            border: 1px solid rgba(0,0,0,0.06);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .owner-info h3 {
+            color: var(--primary-blue);
+            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+        }
+        
+        .owner-info .title {
+            color: var(--medium-gray);
+            font-size: 1.05rem;
+            font-weight: 500;
+        }
+        
+        /* Project Gallery */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+        
+        .gallery-item {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            background: var(--light-gray);
+            border: 1px solid rgba(0,0,0,0.06);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: var(--white);
+            padding: 1.5rem 1rem 1rem;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            background: var(--white);
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+        
+        .contact-item-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-primary);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--white);
+            flex-shrink: 0;
+        }
+        
+        .contact-item-content h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark-slate);
+        }
+        
+        .contact-item-content p {
+            color: var(--medium-gray);
+            font-size: 0.95rem;
+        }
+        
+        .contact-item-content a {
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.05rem;
+            display: block;
+        }
+        
+        .contact-item-content a:hover {
+            color: var(--accent-amber);
+        }
+        
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        
+        .form-group label {
+            font-weight: 600;
+            color: var(--dark-slate);
+            font-size: 0.95rem;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            padding: 0.875rem;
+            border: 1px solid rgba(0,0,0,0.1);
+            border-radius: 8px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: var(--white);
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
+        }
+        
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .submit-button {
+            background: var(--gradient-primary);
+            color: var(--white);
+            padding: 1rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .submit-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(30, 58, 138, 0.3);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark-slate);
+            color: var(--white);
+            padding: 3rem 0 1.5rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section h3 {
+            color: var(--accent-amber);
+            margin-bottom: 1.25rem;
+            font-size: 1.2rem;
+        }
+        
+        .footer-section p,
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+        
+        .footer-section a:hover {
+            color: var(--accent-amber);
+        }
+        
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            list-style: none;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+        }
+        
+        /* Floating Call Button */
+        .floating-call {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 999;
+            background: var(--accent-amber);
+            color: var(--white);
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            text-decoration: none;
+            box-shadow: 0 6px 20px rgba(245, 158, 11, 0.5);
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                box-shadow: 0 6px 20px rgba(245, 158, 11, 0.5);
+            }
+            50% {
+                box-shadow: 0 6px 30px rgba(245, 158, 11, 0.8);
+            }
+        }
+        
+        .floating-call:hover {
+            transform: scale(1.1);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: linear-gradient(135deg, #1E3A8A 0%, #2563EB 100%);
+                flex-direction: column;
+                padding: 2rem;
+                box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+                gap: 1.5rem;
+                border-top: 2px solid var(--accent-amber);
+            }
+            
+            .nav-links a {
+                color: var(--white);
+            }
+            
+            .nav-links a::after {
+                display: none;
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .mobile-menu-toggle {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .section-header h2 {
+                font-size: 2rem;
+            }
+            
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .trust-badges {
+                gap: 2rem;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .floating-call {
+                bottom: 20px;
+                right: 20px;
+                width: 60px;
+                height: 60px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="#home" class="logo">
+                <div class="logo-icon">⚡</div>
+                <span>One Electrics & Engineers</span>
+            </a>
+            <div class="nav-decorations">
+                <span class="nav-symbol" style="position: absolute; left: 10%; top: 20%; opacity: 0.15; font-size: 1.2rem;">⚡</span>
+                <span class="nav-symbol" style="position: absolute; right: 15%; top: 30%; opacity: 0.15; font-size: 1rem;">🔌</span>
+                <span class="nav-symbol" style="position: absolute; left: 25%; bottom: 25%; opacity: 0.15; font-size: 0.9rem;">⚙️</span>
+                <span class="nav-symbol" style="position: absolute; right: 30%; bottom: 20%; opacity: 0.15; font-size: 1.1rem;">⚡</span>
+            </div>
+            <button class="mobile-menu-toggle" onclick="toggleMenu()">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="tel:651-202-5962" class="call-button">📞 Call Now</a></li>
+            </ul>
         </div>
-        <div class="portfolio-grid">
-            <div class="portfolio-item">
-                <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=600&h=400&fit=crop" alt="Electrical panel upgrade">
-                <div class="portfolio-overlay">
-                    <h3>Panel Upgrade</h3>
-                    <p>200 Amp Service Installation</p>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>Professional <span class="hero-highlight">Electrical Solutions</span> in Minnesota</h1>
+            <p class="hero-subtitle">Licensed and insured master electrician with electrical engineering expertise delivering reliable, safe, and efficient electrical services.</p>
+            <div class="hero-ctas">
+                <a href="tel:651-202-5962" class="cta-primary">
+                    📞 (651) 202-5962
+                </a>
+                <a href="#contact" class="cta-primary" style="background: var(--white); color: var(--primary-blue); box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                    Get a Quote
+                </a>
+            </div>
+            <div class="trust-badges">
+                <div class="badge">
+                    <div class="badge-icon">✓</div>
+                    <div class="badge-text">Licensed Master<br>Electrician</div>
+                </div>
+                <div class="badge">
+                    <div class="badge-icon">🛡️</div>
+                    <div class="badge-text">Fully Insured<br>& Bonded</div>
+                </div>
+                <div class="badge">
+                    <div class="badge-icon">📍</div>
+                    <div class="badge-text">Minnesota<br>Local</div>
                 </div>
             </div>
-            <div class="portfolio-item">
-                <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&h=400&fit=crop" alt="Commercial wiring">
-                <div class="portfolio-overlay">
-                    <h3>Commercial Wiring</h3>
-                    <p>Office Building Project</p>
-                </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Services</h2>
+                <p>Comprehensive electrical solutions for residential and commercial needs</p>
             </div>
-            <div class="portfolio-item">
-                <img src="https://images.unsplash.com/photo-1524484485831-a92ffc0de03f?w=600&h=400&fit=crop" alt="Residential lighting">
-                <div class="portfolio-overlay">
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <span class="service-icon">🏠</span>
+                    <h3>Residential Electrical</h3>
+                    <p>Complete home electrical services including wiring, panel upgrades, outlet installation, and lighting solutions.</p>
+                </div>
+                
+                <div class="service-card">
+                    <span class="service-icon">🏢</span>
+                    <h3>Commercial Electrical</h3>
+                    <p>Professional electrical services for businesses, offices, and commercial properties with minimal disruption.</p>
+                </div>
+                
+                <div class="service-card">
+                    <span class="service-icon">⚡</span>
+                    <h3>Panel Upgrades</h3>
+                    <p>Safe and efficient electrical panel upgrades to meet modern power demands and ensure code compliance.</p>
+                </div>
+                
+                <div class="service-card">
+                    <span class="service-icon">💡</span>
                     <h3>Lighting Installation</h3>
-                    <p>Modern Kitchen Remodel</p>
+                    <p>Indoor and outdoor lighting solutions including LED upgrades, recessed lighting, and landscape lighting.</p>
                 </div>
-            </div>
-            <div class="portfolio-item">
-                <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=600&h=400&fit=crop" alt="Electrician at work">
-                <div class="portfolio-overlay">
-                    <h3>Residential Service</h3>
-                    <p>Complete Home Rewire</p>
+                
+                <div class="service-card">
+                    <span class="service-icon">🔌</span>
+                    <h3>EV Charger Setup</h3>
+                    <p>Professional electric vehicle charging station installation for home and business locations.</p>
                 </div>
-            </div>
-            <div class="portfolio-item">
-                <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=600&h=400&fit=crop" alt="Outdoor lighting">
-                <div class="portfolio-overlay">
-                    <h3>Outdoor Lighting</h3>
-                    <p>Landscape & Security Lights</p>
-                </div>
-            </div>
-            <div class="portfolio-item">
-                <img src="https://images.unsplash.com/photo-1558449028-b53a39d100fc?w=600&h=400&fit=crop" alt="EV charger installation">
-                <div class="portfolio-overlay">
-                    <h3>EV Charger</h3>
-                    <p>Home Charging Station</p>
+                
+                <div class="service-card">
+                    <span class="service-icon">🚨</span>
+                    <h3>Emergency Repairs</h3>
+                    <p>Prompt emergency electrical repair services to keep your property safe and operational.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="about" id="about">
-        <div class="section-title">
-            <h2>About Us</h2>
-            <p>Your trusted electrical partner in St. Paul</p>
-        </div>
-        <div class="about-content">
-            <p>At One Electrics and Engineers LLC, we bring years of experience and dedication to every electrical project we undertake. Based in St. Paul, Minnesota, we're a locally-owned and operated business committed to providing the highest quality electrical services to homeowners and businesses throughout the Twin Cities area.</p>
-            <p>Our team of licensed and insured electricians takes pride in delivering safe, reliable, and code-compliant electrical solutions. Whether you're upgrading your home's electrical panel, installing an EV charger, or need commercial electrical work, we approach every job with the same level of professionalism and attention to detail.</p>
-            <p>We believe in building lasting relationships with our clients through honest communication, fair pricing, and exceptional workmanship. When you choose One Electrics and Engineers LLC, you're choosing a partner who cares about your safety and satisfaction.</p>
+    <!-- About Section -->
+    <section id="about" class="section about-section">
+        <div class="container">
+            <div class="about-content">
+                <h2>About One Electrics & Engineers</h2>
+                <p>We are a Minnesota-based electrical contracting company committed to delivering superior electrical services with integrity, expertise, and attention to detail. Our combination of hands-on electrical experience and engineering knowledge ensures every project is completed to the highest standards.</p>
+                
+                <div class="owner-info">
+                    <h3>Tou Thao</h3>
+                    <p class="title">Master Electrician & Electrical Engineer</p>
+                    <p style="margin-top: 1rem; color: var(--medium-gray);">With electrical engineering experience in various roles and as a licensed master electrician, Tou brings a unique combination of theoretical knowledge and practical expertise to every project. This dual perspective ensures optimal solutions that are both innovative and compliant with all safety standards.</p>
+                </div>
+                
+                <div class="credentials">
+                    <span class="credential-badge">✓ Licensed Master Electrician</span>
+                    <span class="credential-badge">✓ Electrical Engineer</span>
+                    <span class="credential-badge">✓ Fully Insured</span>
+                    <span class="credential-badge">✓ Minnesota Licensed</span>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section class="services" id="services">
+    <!-- Projects Gallery Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Recent Projects</h2>
+                <p>Quality workmanship across residential and commercial electrical installations</p>
+            </div>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&h=600&fit=crop" alt="Residential Panel Upgrade" loading="lazy">
+                    <div class="gallery-caption">Residential Panel Upgrade - Minneapolis</div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=800&h=600&fit=crop" alt="LED Lighting Installation" loading="lazy">
+                    <div class="gallery-caption">LED Lighting Installation - St. Paul</div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1513828583688-c52646db42da?w=800&h=600&fit=crop" alt="Commercial Electrical System" loading="lazy">
+                    <div class="gallery-caption">Commercial Electrical System - Bloomington</div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1607400201515-c2c41c07d307?w=800&h=600&fit=crop" alt="Complete Home Rewiring" loading="lazy">
+                    <div class="gallery-caption">Complete Home Rewiring - Eden Prairie</div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1593941707874-ef25b8b4a92b?w=800&h=600&fit=crop" alt="EV Charger Installation" loading="lazy">
+                    <div class="gallery-caption">EV Charger Installation - Edina</div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=600&fit=crop" alt="Outdoor Lighting System" loading="lazy">
+                    <div class="gallery-caption">Outdoor Lighting System - Minnetonka</div>
+                </div>
+            </div>
+            
+            <p style="text-align: center; margin-top: 2.5rem; color: var(--medium-gray); font-size: 0.95rem;">
+                Professional electrical installations showcasing our expertise in residential and commercial projects.
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Get In Touch</h2>
+                <p>Ready to start your electrical project? Contact us today for a consultation.</p>
+            </div>
+            
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-item-icon">📞</div>
+                        <div class="contact-item-content">
+                            <h3>Phone</h3>
+                            <a href="tel:651-202-5962">(651) 202-5962</a>
+                            <p>Call us for immediate assistance</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-item-icon">📧</div>
+                        <div class="contact-item-content">
+                            <h3>Email</h3>
+                            <a href="mailto:tou.thao@oneene.com">tou.thao@oneene.com</a>
+                            <a href="mailto:info@oneene.com">info@oneene.com</a>
+                            <p>Send us your project details</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-item-icon">📍</div>
+                        <div class="contact-item-content">
+                            <h3>Service Area</h3>
+                            <p style="color: var(--dark-slate); font-weight: 500;">Minnesota</p>
+                            <p>Twin Cities & surrounding areas</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-item-icon">⏰</div>
+                        <div class="contact-item-content">
+                            <h3>Business Hours</h3>
+                            <p style="color: var(--dark-slate);">Monday - Friday: 8 AM - 6 PM</p>
+                            <p>Weekend appointments available</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <form class="contact-form" onsubmit="handleSubmit(event)">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Project Details</label>
+                            <textarea id="message" name="message" required placeholder="Tell us about your electrical project..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-button">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>One Electrics & Engineers</h3>
+                    <p>Licensed and insured master electrician serving Minnesota with professional electrical services.</p>
+                    <p style="margin-top: 1rem;">📞 <a href="tel:651-202-5962">(651) 202-5962</a></p>
+                    <p>📧 <a href="mailto:tou.thao@oneene.com">tou.thao@oneene.com</a></p>
+                    <p>📧 <a href="mailto:info@oneene.com">info@oneene.com</a></p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#services">Residential Electrical</a></li>
+                        <li><a href="#services">Commercial Electrical</a></li>
+                        <li><a href="#services">Panel Upgrades</a></li>
+                        <li><a href="#services">Lighting Installation</a></li>
+                        <li><a href="#services">EV Charger Setup</a></li>
+                        <li><a href="#services">Emergency Repairs</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Credentials</h3>
+                    <p>✓ Licensed Master Electrician</p>
+                    <p>✓ Electrical Engineer</p>
+                    <p>✓ Fully Insured & Bonded</p>
+                    <p>✓ Minnesota Licensed</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 One Electrics and Engineers. All rights reserved. | Licensed Master Electrician in Minnesota</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Call Button -->
+    <a href="tel:651-202-5962" class="floating-call" aria-label="Call us">📞</a>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        // Form submission
+        function handleSubmit(event) {
+            event.preventDefault();
+            alert('Thank you for your message! We will contact you shortly at the phone number provided. For immediate assistance, please call (651) 202-5962.');
+            event.target.reset();
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    document.getElementById('navLinks').classList.remove('active');
+                }
+            });
+        });
+
+        // Add scroll effect to navbar
+        let lastScroll = 0;
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 100) {
+                nav.style.boxShadow = '0 4px 20px rgba(0,0,0,0.1)';
+            } else {
+                nav.style.boxShadow = '0 1px 3px rgba(0,0,0,0.05)';
+            }
+            
+            lastScroll = currentScroll;
+        });
+    </script>
+</body>
+</html>
